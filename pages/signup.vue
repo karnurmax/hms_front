@@ -34,7 +34,7 @@
 
       <Info />
 
-      <div v-if="showText === 3">
+      <div>
           <button type="button" class="registration" @click="registration">Зарегестрироваться</button>
       </div>
 
@@ -53,8 +53,7 @@ export default {
 
   data() {
     return {
-      userData: { name: '', surname: '', login: '', password: '', confirmPassword: '' },
-      showText: 3
+      userData: { name: '', surname: '', login: '', password: '', confirmPassword: '' }
     }
   },
 

@@ -26,7 +26,6 @@
                 alert('Welcome')
             }
         }
-
     }
 </script>
 

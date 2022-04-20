@@ -2,59 +2,66 @@
   <div id="registration">
     <h1>Регистрация</h1>
       <input
-        v-model="input.name"
+        v-model="userData.name"
         type="text"
         placeholder="Имя"
         class="name"
       />
       <input
-        v-model="input.surname"
+        v-model="userData.surname"
         type="text"
         placeholder="Фамилия"
         class="lastname"
       />
       <input
-        v-model="input.login"
+        v-model="userData.login"
         type="text"
         placeholder="Логин"
         class="login"
       />
       <input
-        v-model="input.password"
+        v-model="userData.password"
         type="password"
         placeholder="Пароль"
         class="password"
       />
       <input
-        v-model="input.confirmPassword"
+        v-model="userData.confirmPassword"
         type="password"
         placeholder="Подтвердите пароль"
         class="password"
       />
-      <div>
-          <button type="button" class="registration" @click="registration()">Зарегестрироваться</button>
+
+      <Info />
+
+      <div v-if="showText === 3">
+          <button type="button" class="registration" @click="registration">Зарегестрироваться</button>
       </div>
+
     </div>
 </template>
 
 <script>
+import Info from "./info.vue";
+
 export default {
   name: 'RegistrationPage',
+
+  components: {
+    Info
+  },
+
   data() {
     return {
-      input: {
-        name: '',
-        surname: '',
-        password: '',
-        confirmPassword: ''
-      },
+      userData: { name: '', surname: '', login: '', password: '', confirmPassword: '' },
+      showText: 3
     }
   },
+
   methods: {
-    registration() {
-      alert('Вы прошли регистрацию')
-    }
+    registration() {}
   },
+
 }
 </script>
 
@@ -67,7 +74,7 @@ export default {
       border: 1px solid #CCCCCC;
       background-color: #FFFFFF;
       margin: auto;
-      margin-top: 200px;
+      margin-top: 100px;
       padding: 20px;
     }
     .name {
